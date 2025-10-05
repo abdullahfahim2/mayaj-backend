@@ -22,7 +22,7 @@ def search_view(request):
             is_active=True
         ).distinct()
     else:
-        products = Product.objects.none()
+        products = Product.objects.all()
     
     context = {
         'sitesettings':sitesettings,
@@ -541,4 +541,5 @@ def order_details(request, order_id):
         'order': order,
     }
     return render(request, 'store/order_details.html', context)
+
     
